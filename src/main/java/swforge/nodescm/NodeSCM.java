@@ -38,6 +38,14 @@ public class NodeSCM extends SCM {
 		log.fine("command = " + command);
 	}
 	
+	public String getNodeLabel() {
+		return nodeLabel;
+	}
+	
+	public String getCommand() {
+		return command;
+	}
+	
 	@Override
 	public SCMRevisionState calcRevisionsFromBuild(AbstractBuild<?, ?> build,
 			Launcher launcher, TaskListener listener) throws IOException,
@@ -70,7 +78,7 @@ public class NodeSCM extends SCM {
 	}
 	
 	@Extension
-	public static class DescriptorImpl extends SCMDescriptor<NodeSCM> {
+	public static final class DescriptorImpl extends SCMDescriptor<NodeSCM> {
 
 		private String tfExecutable;
 		
